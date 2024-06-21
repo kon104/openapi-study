@@ -1,0 +1,45 @@
+get:
+  summary: 顧客情報の取得
+  description: 顧客情報を取得します。
+  tags:
+    - Customer
+  parameters:
+  responses:
+    '200':
+      description: |-
+        顧客情報を取得します
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/customers.yml
+    '401':
+      description: 認証失敗
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/error.yml
+    '500':
+      description: サーバーの内部エラー
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/error.yml
+post:
+  summary: 顧客情報の登録
+  description: 顧客情報を登録します。
+  tags:
+    - Customer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/customer_new.yml
+  responses:
+    '200':
+      description: |-
+        顧客情報の登録が成功した場合、レスポンスに登録情報が含まれます
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/customer.yml
+                

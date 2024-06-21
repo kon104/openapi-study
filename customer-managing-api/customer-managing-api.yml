@@ -3,6 +3,14 @@ info:
   title: 顧客管理API
   description: 顧客情報を管理するAPI
   version: '1.0'
+  termsOfService: https://example.com/terms/
+  contact: 
+    name: API Support
+    url: https://example.com/support/
+    email: support@example.com
+  license:
+    name: ○○ License
+    url: https://example.com/licenses/LICENSE.html
 servers:
   - url: https://api.server.test/v1
     description: Productoin
@@ -17,6 +25,8 @@ components:
 security:
   - Bearer: []
 paths:
+  /customer:
+    $ref: ./paths/customer.yml
   /customer/{id}:
     $ref: ./paths/customer_id.yml
   /customer/findByStatus:
