@@ -6,7 +6,7 @@ get:
   parameters:
     - name: id
       in: path
-      description: フィルタリングする会員ID
+      description: フィルタリングする顧客ID
       required: true
       schema:
         type: integer
@@ -31,4 +31,41 @@ get:
         application/json:
           schema:
             $ref: ../components/schemas/error.yml
-                
+patch:
+  summary: 顧客情報の更新
+  description: IDを指定して顧客情報を更新します。
+  tags:
+    - Customer
+  parameters:
+    - name: id
+      in: path
+      description: 更新する顧客ID
+      required: true
+      schema:
+        type: integer
+        format: int32
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/customer.yml
+  responses:
+    '200':
+      description: |-
+        顧客情報の登録が成功した場合、レスポンスに登録情報が含まれます
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/customer.yml
+    '401':
+      description: 認証失敗
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/error.yml
+    '500':
+      description: サーバーの内部エラー
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/error.yml
