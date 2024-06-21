@@ -1,0 +1,5 @@
+title: 顧客情報一覧
+description: 顧客情報オプジェクト一覧
+type: array
+items:
+  $ref: ./customer.yml

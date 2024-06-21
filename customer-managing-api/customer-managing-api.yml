@@ -17,6 +17,8 @@ components:
 security:
   - Bearer: []
 paths:
+  /customer/{id}:
+    $ref: ./paths/customer_id.yml
   /customer/findByStatus:
     $ref: ./paths/customer_findByStatus.yml
 

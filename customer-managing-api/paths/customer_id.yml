@@ -1,21 +1,16 @@
 get:
   summary: 顧客情報の取得
-  description: 会員ステータスを指定して顧客情報を取得します。
+  description: IDを指定して顧客情報を取得します。
   tags:
     - Customer
   parameters:
-    - name: status
-      in: query
-      description: フィルタリングする会員ステータス
+    - name: id
+      in: path
+      description: フィルタリングする会員ID
       required: true
       schema:
-        type: string
-        default: regular
-        enum:
-          - regular
-          - silver
-          - gold
-          - premium
+        type: integer
+        format: int32
   responses:
     '200':
       description: |-
@@ -23,7 +18,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/customers.yml
+            $ref: ../components/schemas/customer.yml
     '401':
       description: 認証失敗
       content:
