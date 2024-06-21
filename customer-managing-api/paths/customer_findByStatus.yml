@@ -28,4 +28,10 @@ get:
         application/json:
           schema:
             $ref: ../components/schemas/error.yml
+    '500':
+      description: サーバーの内部エラー
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/error.yml
                 

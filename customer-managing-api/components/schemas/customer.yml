@@ -1,16 +1,22 @@
+title: 顧客情報
+description: 顧客情報オブジェクト
 type: object
 properties:
   id:
+    description: 顧客識別ID
     type: integer
     format: int64
     example: 4
   name:
+    description: 顧客名
     type: string
     example: Jessica Smith
   age:
+    description: 年齢
     type: integer
     format: int64
     example: 32
   status:
+    description: 会員ステータス
     type: string
     example: regular

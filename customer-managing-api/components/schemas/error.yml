@@ -1,9 +1,13 @@
+title: エラーレスポンス
+description: エラー情報
 type: object
 properties:
   code:
+    description: エラーコード
     type: string
     example: ERR_10001
   message:
+    description: エラーメッセージ
     type: string
     example: Error Message
                 
