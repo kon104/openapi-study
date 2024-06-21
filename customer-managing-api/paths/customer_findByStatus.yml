@@ -1,0 +1,31 @@
+get:
+  summary: Finds Customers by status
+  description: Multiple status values can be provided with comma separated strings
+  parameters:
+    - name: status
+      in: query
+      description: Status values that need to be considered for filter
+      required: true
+      schema:
+        type: string
+        default: regular
+        enum:
+          - regular
+          - silver
+          - gold
+          - premium
+  responses:
+    '200':
+      description: |-
+        顧客情報を取得します
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/customer.yml
+    '401':
+      description: 認証失敗
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/error.yml
+                
